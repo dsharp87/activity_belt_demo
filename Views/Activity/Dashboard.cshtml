@@ -1,0 +1,55 @@
+<h4>Welcome: @ViewBag.LoggedUser.FirstName @ViewBag.LoggedUser.LastName</h4>
+<form asp-controller="Activity" asp-action="Logout" method="POST">
+        <input type="submit" value="Logout">
+</form>
+
+<table>
+    <thead>
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Participant Count</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        @foreach(var activity in ViewBag.AllActivities)
+        {
+            <tr>
+                <td><a href="/ShowActivityPlan/@activity.ActivityPlanID">@activity.Title</a></td>
+                <td>@activity.StartDate.ToString("MM/dd hh:mm tt")</td>
+                <td>@activity.Duration @activity.DurationType</td>
+                <td>@activity.User.FirstName @activity.User.LastName</td>
+                <td>@activity.AttendingUsers.Count</td>
+                @if(activity.UserID == ViewBag.LoggedUser.UserID)
+                {
+                    <td><a href="/DeleteActivity/@activity.ActivityPlanID">DELETE</a></td>
+                }
+                else 
+                {
+                    bool AttendingFlag = false;
+                    foreach(var uap in activity.AttendingUsers)
+                    {
+                        if(uap.UserID == ViewBag.LoggedUser.UserID)
+                        {
+                            AttendingFlag = true;
+                        }
+                    }
+                    if(AttendingFlag)
+                    {
+                        <td><a href="/DeleteUserActivityPlan/@activity.ActivityPlanID">UN-RSVP</a></td>
+                    }
+                    else
+                    {
+                        <td><a href="/AddUserActivityPlan/@activity.ActivityPlanID">RSVP</a></td>
+                    }
+                }
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-controller="Activity" asp-action="ActivityForm" method="GET">
+    <input type="submit" value="Add new Activity">
+</form>

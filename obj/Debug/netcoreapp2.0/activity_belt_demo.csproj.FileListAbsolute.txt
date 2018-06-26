@@ -1,0 +1,11 @@
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\bin\Debug\netcoreapp2.0\activity_belt_demo.deps.json
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\bin\Debug\netcoreapp2.0\activity_belt_demo.runtimeconfig.json
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\bin\Debug\netcoreapp2.0\activity_belt_demo.runtimeconfig.dev.json
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\bin\Debug\netcoreapp2.0\activity_belt_demo.dll
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\bin\Debug\netcoreapp2.0\activity_belt_demo.pdb
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.csproj.CoreCompileInputs.cache
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.AssemblyInfoInputs.cache
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.AssemblyInfo.cs
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.dll
+C:\Users\Danny\Desktop\DojoAssignments\netCore\orms\activity_belt_demo\obj\Debug\netcoreapp2.0\activity_belt_demo.pdb

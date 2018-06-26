@@ -1,0 +1,37 @@
+<h1>showme</h1>
+<h3>Title: @ViewBag.ActivityPlan.Title</h3>
+<h3>Start Date: @ViewBag.ActivityPlan.StartDate.ToString("MM/dd hh:mm tt")</h3>
+<h3>Organizer: @ViewBag.ActivityPlan.User.FirstName @ViewBag.ActivityPlan.User.LastName</h3>
+<h3>Participants</h3>
+<ul>
+@foreach(var uap in ViewBag.ActivityPlan.AttendingUsers)
+{
+    <li>@uap.User.FirstName @uap.User.LastName</li>
+}
+</ul>
+
+@{
+    if(ViewBag.LoggedUser.UserID == ViewBag.ActivityPlan.UserID)
+    {
+        <a href="/DeleteActivity/@ViewBag.ActivityPlan.ActivityPlanID">DELETE</a>
+    }
+    else
+    {
+        bool attendingFlag = false;
+        foreach(var uap in ViewBag.ActivityPlan.AttendingUsers)
+        {
+            if(ViewBag.LoggedUser.UserID == uap.UserID)
+            {
+                attendingFlag = true;
+            }
+        }
+        if(attendingFlag)
+        {
+            <a href="/DeleteUserActivityPlan/@ViewBag.ActivityPlan.ActivityPlanID">Un-RSVP</a>
+        }
+        else 
+        {
+            <a href="/AddUserActivityPlan/@ViewBag.ActivityPlan.ActivityPlanID">RSVP</a>
+        }
+    }
+}

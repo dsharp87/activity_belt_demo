@@ -1,0 +1,45 @@
+﻿@model activity_belt_demo.Models.UserViewModel
+<link rel="stylesheet" href="~/css/site.css" />
+
+
+<div class="top-bar">
+    <h1>Activity Planner</h1>
+    <h4>Create view join and review activities and events near you!</h4>
+</div>
+<div>
+    <h2>Register</h2>
+    <form asp-controller="LoginReg" asp-action="Register" method="post">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName"/>
+        <span asp-validation-for="FirstName"></span><br>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName"/>
+        <span asp-validation-for="LastName"></span><br>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
+        <p>@ViewBag.ExistsError</p>
+        <span asp-validation-for="Email"></span><br>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password"/>
+        <span asp-validation-for="Password"></span><br>
+        <label asp-for="PasswordConfirmation"></label>
+        <input asp-for="PasswordConfirmation" type="password"/>
+        <span asp-validation-for="PasswordConfirmation"></span><br>
+        <br>
+        <input type="submit" value = "Register"/>
+    </form>
+</div>
+                
+        <!-- <div asp-validation-summary="All"></div> -->
+<div>
+    <br><br><br>
+    <h2>Login</h2>
+    <form action="attemptlogin" method="post">
+        <label>Email:</label>
+        <input type="text" name="email"/><br>
+        <label>Password:</label>
+        <input type="password" name = "password"/><br>
+        <input type="submit" value="Login"/>
+    </form>
+        <h3>@ViewBag.Error</h3>
+</div>
